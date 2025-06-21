@@ -7,18 +7,32 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ListaDetalleActivity extends AppCompatActivity {
+
+    RecyclerView recyclerProductos;
+    List<Producto> productos;
+    ProductoAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_lista_detalle);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
+        recyclerProductos = findViewById(R.id.recycler_productos);
+        recyclerProductos.setLayoutManager(new LinearLayoutManager(this));
+
+        productos = new ArrayList<>();
+        productos.add(new Producto("Pan", "Supermercado", false));
+        productos.add(new Producto("Ibuprofeno", "Farmacia", true));
+        productos.add(new Producto("Pintura", "Ferretería", false));
+
+        adapter = new ProductoAdapter(productos);
+        recyclerProductos.setAdapter(adapter);
     }
 }

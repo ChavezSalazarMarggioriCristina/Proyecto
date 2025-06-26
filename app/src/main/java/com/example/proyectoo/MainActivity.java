@@ -7,36 +7,25 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnLogin, btnRegistro, btnPerfil, btnCrearLista, btnListaDetalle, btnCrearProducto, btnCategorias;
+    Button btnCrearLista, btnVerDetalleLista, btnCrearProducto, btnCategorias, btnCerrarSesion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main); // Este es el layout del menú que me pasaste
+        setContentView(R.layout.activity_main);
 
-        // Conectar botones con el layout XML
-        btnLogin = findViewById(R.id.btn_login);
-        btnRegistro = findViewById(R.id.btn_registro);
-        btnPerfil = findViewById(R.id.btn_perfil);
+        // Conexión de botones con el layout
         btnCrearLista = findViewById(R.id.btn_crear_lista);
-        btnListaDetalle = findViewById(R.id.btn_lista_detalle);
+        btnVerDetalleLista = findViewById(R.id.btn_lista_detalle);
         btnCrearProducto = findViewById(R.id.btn_crear_producto);
         btnCategorias = findViewById(R.id.btn_categorias);
+        btnCerrarSesion = findViewById(R.id.btn_cerrar_sesion);
 
-        // Intents para ir a cada formulario
-        btnLogin.setOnClickListener(v ->
-                startActivity(new Intent(MainActivity.this, LoginActivity.class)));
-
-        btnRegistro.setOnClickListener(v ->
-                startActivity(new Intent(MainActivity.this, RegistroActivity.class)));
-
-        //btnPerfil.setOnClickListener(v ->
-          //      startActivity(new Intent(MainActivity.this, PerfilActivity.class)));
-
+        // Acciones de cada botón
         btnCrearLista.setOnClickListener(v ->
                 startActivity(new Intent(MainActivity.this, CrearListaActivity.class)));
 
-        btnListaDetalle.setOnClickListener(v ->
+        btnVerDetalleLista.setOnClickListener(v ->
                 startActivity(new Intent(MainActivity.this, ListaDetalleActivity.class)));
 
         btnCrearProducto.setOnClickListener(v ->
@@ -44,5 +33,13 @@ public class MainActivity extends AppCompatActivity {
 
         btnCategorias.setOnClickListener(v ->
                 startActivity(new Intent(MainActivity.this, CategoriaActivity.class)));
+
+        // Acción para cerrar sesión
+        btnCerrarSesion.setOnClickListener(v -> {
+            // Volver a la pantalla de bienvenida
+            Intent intent = new Intent(MainActivity.this, BienvenidaActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); // Limpiar pila de pantallas
+            startActivity(intent);
+        });
     }
 }

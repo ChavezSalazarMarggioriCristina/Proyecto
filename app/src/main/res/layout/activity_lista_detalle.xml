@@ -9,16 +9,43 @@
     android:padding="16dp"
     tools:context=".ListaDetalleActivity">
 
-    <!-- Título de la lista -->
+    <!-- Nombre de la lista -->
+    <TextView
+        android:id="@+id/tv_nombre_lista"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Nombre de la lista"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Descripción de la lista -->
+    <TextView
+        android:id="@+id/tv_descripcion_lista"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Descripción de la lista"
+        android:textSize="16sp"
+        android:textColor="#666666"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_nombre_lista"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Título sección de productos -->
     <TextView
         android:id="@+id/tv_titulo_lista"
         android:layout_width="0dp"
-        android:layout_height="48dp"
+        android:layout_height="wrap_content"
         android:text="Productos de la Lista"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="#000000"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_descripcion_lista"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -27,7 +54,7 @@
         android:id="@+id/recycler_productos"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@id/tv_titulo_lista"
         app:layout_constraintBottom_toTopOf="@id/fab_agregar_producto"
         app:layout_constraintStart_toStartOf="parent"

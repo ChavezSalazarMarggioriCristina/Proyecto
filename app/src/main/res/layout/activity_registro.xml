@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/contenedor_registro"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="24dp"
@@ -12,8 +13,8 @@
     <TextView
         android:id="@+id/tv_titulo_registro"
         android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:text="Registrarse"
+        android:layout_height="wrap_content"
+        android:text="Crear cuenta"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
@@ -25,7 +26,7 @@
     <EditText
         android:id="@+id/et_nombre"
         android:layout_width="0dp"
-        android:layout_height="48dp"
+        android:layout_height="56dp"
         android:hint="Nombre completo"
         app:layout_constraintTop_toBottomOf="@id/tv_titulo_registro"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,9 +35,9 @@
 
     <!-- Correo -->
     <EditText
-        android:id="@+id/et_correo_registro"
+        android:id="@+id/et_correo"
         android:layout_width="0dp"
-        android:layout_height="48dp"
+        android:layout_height="56dp"
         android:hint="Correo electrónico"
         android:inputType="textEmailAddress"
         app:layout_constraintTop_toBottomOf="@id/et_nombre"
@@ -48,19 +49,19 @@
     <EditText
         android:id="@+id/et_telefono"
         android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:hint="Número de teléfono"
+        android:layout_height="56dp"
+        android:hint="Teléfono"
         android:inputType="phone"
-        app:layout_constraintTop_toBottomOf="@id/et_correo_registro"
+        app:layout_constraintTop_toBottomOf="@id/et_correo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"/>
 
     <!-- Contraseña -->
     <EditText
-        android:id="@+id/et_contrasena_registro"
+        android:id="@+id/et_contrasena"
         android:layout_width="0dp"
-        android:layout_height="48dp"
+        android:layout_height="56dp"
         android:hint="Contraseña"
         android:inputType="textPassword"
         app:layout_constraintTop_toBottomOf="@id/et_telefono"
@@ -68,18 +69,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"/>
 
-    <!-- Botón Registrar -->
+    <!-- Botón registrarse -->
     <Button
         android:id="@+id/btn_registrarse"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:text="Registrarse"
-        app:layout_constraintTop_toBottomOf="@id/et_contrasena_registro"
+        app:layout_constraintTop_toBottomOf="@id/et_contrasena"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="24dp"/>
 
-    <!-- Ir al login -->
+    <!-- Texto para volver al login -->
     <TextView
         android:id="@+id/tv_ir_login"
         android:layout_width="wrap_content"
@@ -90,4 +91,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

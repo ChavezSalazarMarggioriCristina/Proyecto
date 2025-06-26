@@ -33,7 +33,9 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.ViewHo
         Producto producto = productos.get(position);
 
         holder.nombre.setText(producto.getNombre());
-        holder.categoria.setText(producto.getCategoria());
+        holder.categoria.setText("Categoría: " + producto.getCategoria());
+        holder.precio.setText("Precio: S/ " + String.format("%.2f", producto.getPrecio()));
+        holder.cantidad.setText("Cantidad: " + producto.getCantidad());
         holder.checkBox.setChecked(producto.isComprado());
 
         holder.checkBox.setOnCheckedChangeListener((btn, isChecked) -> {
@@ -53,7 +55,7 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.ViewHo
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView nombre, categoria;
+        TextView nombre, categoria, precio, cantidad;
         CheckBox checkBox;
         ImageView imgEliminar;
 
@@ -61,9 +63,10 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.ViewHo
             super(itemView);
             nombre = itemView.findViewById(R.id.tv_nombre_producto);
             categoria = itemView.findViewById(R.id.tv_categoria_producto);
+            precio = itemView.findViewById(R.id.tv_precio_producto);
+            cantidad = itemView.findViewById(R.id.tv_cantidad_producto);
             checkBox = itemView.findViewById(R.id.chk_comprado);
             imgEliminar = itemView.findViewById(R.id.img_eliminar);
         }
     }
 }
-

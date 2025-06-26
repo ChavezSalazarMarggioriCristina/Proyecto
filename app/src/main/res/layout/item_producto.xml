@@ -10,45 +10,68 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="horizontal"
         android:padding="16dp"
         android:gravity="center_vertical">
 
+        <!-- CheckBox -->
         <CheckBox
             android:id="@+id/chk_comprado"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
 
+        <!-- Contenedor del texto -->
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="1dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
             android:layout_marginStart="12dp">
 
+            <!-- Nombre del producto -->
             <TextView
                 android:id="@+id/tv_nombre_producto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Nombre del producto"
                 android:textSize="16sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
+            <!-- Categoría -->
             <TextView
                 android:id="@+id/tv_categoria_producto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Categoría"
                 android:textSize="14sp"
-                android:textColor="#666"/>
+                android:textColor="#666" />
+
+            <!-- Precio -->
+            <TextView
+                android:id="@+id/tv_precio_producto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Precio: S/ 0.00"
+                android:textSize="14sp"
+                android:textColor="#444" />
+
+            <!-- Cantidad -->
+            <TextView
+                android:id="@+id/tv_cantidad_producto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cantidad: 1"
+                android:textSize="14sp"
+                android:textColor="#444" />
         </LinearLayout>
 
+        <!-- Botón eliminar -->
         <ImageView
             android:id="@+id/img_eliminar"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@android:drawable/ic_delete"
-            android:contentDescription="Eliminar producto"/>
+            android:contentDescription="Eliminar producto" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

@@ -26,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, CrearListaActivity.class)));
 
         btnVerDetalleLista.setOnClickListener(v ->
-                startActivity(new Intent(MainActivity.this, ListaDetalleActivity.class)));
+                startActivity(new Intent(MainActivity.this, ListaProductoActivity.class)));
+
 
         btnCrearProducto.setOnClickListener(v ->
                 startActivity(new Intent(MainActivity.this, CrearProductoActivity.class)));

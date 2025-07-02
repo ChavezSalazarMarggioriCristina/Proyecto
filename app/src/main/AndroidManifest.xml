@@ -21,6 +21,7 @@
         <activity android:name=".ListaDetalleActivity" android:exported="true" />
         <activity android:name=".CrearProductoActivity" android:exported="true" />
         <activity android:name=".CategoriaActivity" android:exported="true" />
+        <activity android:name=".ListaProductoActivity" android:exported="true" /> <!-- 🔧 Esta línea fue agregada -->
         <activity android:name=".MainActivity" android:exported="true" />
 
         <!-- Pantalla de Bienvenida (inicial) -->
